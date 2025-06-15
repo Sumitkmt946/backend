@@ -156,7 +156,7 @@ def update_task(task_id):
         return jsonify({'success': False, 'error': str(e)}), 500
 
 # Delete Task
-@app.route('/api/tasks/<int:task_id>', methods=['DELETE'])
+@app.route('/api/tasks/<int:task_id>', methods=['DELETE']) 
 def delete_task(task_id):
     try:
         task = Task.query.get_or_404(task_id)
