@@ -169,6 +169,10 @@ def delete_task(task_id):
 
 # Start Server
 if __name__ == '__main__':
+    if os.environ.get('VERCEL', None):
+        app.run(debug=False)
+    else:
+        app.run(debug=True)
     print("🚀 Starting Flask Backend Server...")
     print("📍 Server URL: http://localhost:5000")
     print("🔗 API Base URL: http://localhost:5000/api")
